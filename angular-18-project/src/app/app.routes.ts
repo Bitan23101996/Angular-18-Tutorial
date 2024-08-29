@@ -1,3 +1,24 @@
 import { Routes } from '@angular/router';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path: 'add-emp',
+        component: AddEmployeeComponent
+    },
+    {
+        path: 'emp-list',
+        component: EmployeeListComponent
+    },
+    {
+        path: 'data-binding',
+        component: DataBindingComponent
+    },
+    {
+        path: 'directive',
+        component: AngularDirectiveComponent
+    }
+];

@@ -1,0 +1,75 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h4>Angular 18 Directive Example</h4>
+</div>
+
+<div class="container">
+    <!-- Row 1:  for action button -->
+    <div class="row">
+        <div class="col-3">
+            @if (displayDivOne) {
+            <div class="box bg-primary mt-2 mb-3">Div 1</div>
+            }
+        </div>
+        <div class="col-3 ">
+            @if (displayDivTwo) {
+            <div class="box bg-success mt-2 mb-3">Div 2</div>
+            }
+        </div>
+        <div class="col-3 ">
+            @if(text1Value === text2Value){
+            <div class="box bg-danger mt-2 mb-3">Div 3</div>
+            }
+        </div>
+        <div class="col-3 ">
+            @if (isCityChecked && isSpecialCity === 'Y') {
+            <div class="box bg-info mt-2 mb-3">Div 4</div>
+            }
+        </div>
+    </div>
+
+    <!-- Row 2:  for action button -->
+    <div class="row">
+        <div class="col-3">
+            <button class="btn btn-success btn-sm mx-2" (click)="showDivOne()">Show</button>
+            <button class="btn btn-danger btn-sm" (click)="hideDivOne()">Hide</button>
+        </div>
+        <div class="col-3">
+            <div>
+                <button class="btn btn-secondary btn-sm mx-2" (click)="toggleDivTwo()">Toggle Div 2</button>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" name="text1" [(ngModel)]="text1Value">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="text2" [(ngModel)]="text2Value">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <div class="col">
+                    Check City: <input type="checkbox" name="cityCheckInput" [(ngModel)]="isCityChecked" (click)="toggleCityDropdown()"/>
+                </div>
+                @if (isCityChecked) {
+                <div class="col">
+                    <select name="selected-city" [(ngModel)]="isSpecialCity">
+                        <option value="" disabled>Select City</option>
+                        @for(city of cityList; track $index){
+                        <option [value]="city.isSpecial">
+                            @if(city.isActive){
+                            {{city.cityName}}
+                            }
+                        </option>
+                        }
+                    </select>
+                </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
