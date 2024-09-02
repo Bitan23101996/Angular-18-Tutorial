@@ -51,7 +51,8 @@
         <div class="col-3">
             <div class="row">
                 <div class="col">
-                    Check City: <input type="checkbox" name="cityCheckInput" [(ngModel)]="isCityChecked" (click)="toggleCityDropdown()"/>
+                    Check City: <input type="checkbox" name="cityCheckInput" [(ngModel)]="isCityChecked"
+                        (click)="toggleCityDropdown()" />
                 </div>
                 @if (isCityChecked) {
                 <div class="col">
@@ -72,4 +73,73 @@
 
         </div>
     </div>
+</div>
+<hr>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                @for(tableHead of tableHeadingList; track $index){
+                @if(tableHead.isDisplay === 'Y'){
+                <th>{{tableHead.title}}</th>
+                }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if(studentList!.length > 0){
+            @for(student of studentList; track $index){
+            <tr>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.major}}</td>
+                <td>{{student.gpa}}</td>
+
+
+                @if(displayCourseField){
+                @if(student.courses!.length > 0){
+                <td>
+                    @for (course of student.courses; track $index) {
+                    {{course}}
+                    @if($index!=student.courses!.length - 1){
+                    &#44;&nbsp;
+                    }
+                    }
+                </td>
+                }
+                @else{
+                <td>-</td>
+                }
+                }
+
+                @if(displayHobbyField){
+                @if(student.hobbies!.length > 0){
+                <td>
+                    @for (hobby of student.hobbies; track $index) {
+                    {{hobby}}
+                    @if($index!=student.hobbies!.length - 1){
+                    &#44;&nbsp;
+                    }
+                    }
+                </td>
+                }
+                @else {
+                <td>-</td>
+                }
+                }
+
+
+
+            </tr>
+            }
+            }
+            @else {
+            <h4 class="text-danger text-denter">No Record Found</h4>
+            }
+
+
+
+        </tbody>
+    </table>
 </div>
