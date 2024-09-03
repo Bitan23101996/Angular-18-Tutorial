@@ -3,6 +3,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
+import { AngularPipeComponent } from './components/angular-pipe/angular-pipe.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'directive',
         component: AngularDirectiveComponent
+    },
+    {
+        path: 'pipes',
+        component: AngularPipeComponent
     }
 ];
