@@ -4,6 +4,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
 import { AngularPipeComponent } from './components/angular-pipe/angular-pipe.component';
+import { TemplateDrivenComponent } from './components/forms/template-driven/template-driven.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'pipes',
         component: AngularPipeComponent
+    },
+    {
+        path: 'template-driven',
+        component: TemplateDrivenComponent
     }
 ];

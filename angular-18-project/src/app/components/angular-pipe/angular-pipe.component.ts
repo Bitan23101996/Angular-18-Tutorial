@@ -20,7 +20,7 @@ export class AngularPipeComponent implements OnInit {
   currentTime: Observable<Date> = new Observable<Date>();
   //use for json pipe
   studentObj: StudentModel = {
-    name: '',
+    name: "",
     age: 25,
     major: 'Science',
   };

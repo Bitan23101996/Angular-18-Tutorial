@@ -5,6 +5,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { MenuModel } from './models/menu.model';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -49,8 +50,17 @@ export class AppComponent {
     isActive: true,
     isDisplay: 'Y',
     menuUrl: 'pipes'
+  },
+  {
+    menuTitle: 'Template Driven Form',
+    menuId: 6,
+    isActive: true,
+    isDisplay: 'Y',
+    menuUrl: 'template-driven'
   }
 ];
+
+
 
   getMenuList() {}
 }
