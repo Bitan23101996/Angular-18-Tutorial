@@ -41,14 +41,14 @@ export class AppComponent {
     menuTitle: 'Directives',
     menuId: 4,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'directive'
   },
   {
     menuTitle: 'Pipes',
     menuId: 5,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'pipes'
   },
   {
@@ -57,6 +57,20 @@ export class AppComponent {
     isActive: true,
     isDisplay: 'Y',
     menuUrl: 'template-driven'
+  },
+  {
+    menuTitle: 'Reactive Form',
+    menuId: 7,
+    isActive: true,
+    isDisplay: 'Y',
+    menuUrl: 'reactive'
+  },
+  {
+    menuTitle: 'Signal',
+    menuId: 8,
+    isActive: true,
+    isDisplay: 'Y',
+    menuUrl: 'signal'
   }
 ];
 

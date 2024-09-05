@@ -5,6 +5,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { AngularDirectiveComponent } from './components/angular-directive/angular-directive.component';
 import { AngularPipeComponent } from './components/angular-pipe/angular-pipe.component';
 import { TemplateDrivenComponent } from './components/forms/template-driven/template-driven.component';
+import { ReactiveComponent } from './components/forms/reactive/reactive.component';
+import { SignalComponent } from './components/signal/signal.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +32,13 @@ export const routes: Routes = [
     {
         path: 'template-driven',
         component: TemplateDrivenComponent
+    },
+    {
+        path: 'reactive',
+        component: ReactiveComponent
+    },
+    {
+        path: 'signal',
+        component: SignalComponent
     }
 ];
