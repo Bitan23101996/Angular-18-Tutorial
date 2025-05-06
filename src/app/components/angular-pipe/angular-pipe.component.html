@@ -1,0 +1,98 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h4>Angular 18 Pipes Example</h4>
+</div>
+
+<br/>
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead class="table-success">
+            <tr>
+                <th>Pipe Name</th>
+                <th>Original</th>
+                <th>After Pipe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--uppercase pipe-->
+            <tr>
+                <td><b>uppercase</b></td>
+                <td>{{firstName}}</td>
+                <td>{{firstName | uppercase}}</td>
+            </tr>
+            <!--/uppercase pipe-->
+
+            <!--lowercase pipe-->
+            <tr>
+                <td><b>lowercase</b></td>
+                <td>{{lastName}}</td>
+                <td>{{lastName | lowercase}}</td>
+            </tr>
+            <!--/lowercase pipe-->
+
+            <!--date pipe-->
+            <tr>
+                <td><b>date</b></td>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date}}</td>
+            </tr>
+            <!--/date pipe-->
+
+            <!--date: 'dd-MM-yy' pipe-->
+            <tr>
+                <td><b>date: 'dd-MM-yy' <br/> date: 'dd/MM/yy'</b></td>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd-MM-yy'}} <br/> {{currentDate | date: 'dd/MM/yy'}}</td>
+            </tr>
+            <!--/date: 'dd-MM-yy' pipe-->
+
+            <!--dd-MM-yyyy pipe-->
+            <tr>
+                <td><b>date: 'dd-MM-yyyy' <br/> date: 'dd/MM/yyyy' </b></td>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd-MM-yyyy'}} <br/> {{currentDate | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+            <!--/dd-MM-yyyy pipe-->
+            <!--dd-MMM-yyyy pipe-->
+            <tr>
+                <td><b>date: 'dd-MMM-yyyy' <br/> date: 'dd/MMM/yyyy' </b></td>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd-MMM-yyyy'}} <br/> {{currentDate | date: 'dd/MMM/yyyy'}}</td>
+            </tr>
+            <!--/dd-MMM-yyyy pipe-->
+
+            <!--json pipe-->
+            <tr>
+                <td><b>json</b></td>
+                <td>{{studentObj}}</td>
+                <td>{{studentObj | json}}</td>
+            </tr>
+            <!--/json pipe-->
+
+            <!--custom NA pipe-->
+            <tr>
+                <td><b>N/A Cutom Pipe</b></td>
+                <td>{{studentObj.name}}</td>
+                <td>{{studentObj.name | na}}</td>
+            </tr>
+            <!--/custom NA pipe-->
+
+            <!--async pipe-->
+            <tr>
+                <td><b>async</b></td>
+                <td>{{currentTime}}</td>
+                <td>{{currentTime | async}}</td>
+            </tr>
+            <!--/async pipe-->
+
+            <!--async with date pipe-->
+            <tr>
+                <td><b>async | date: 'hh:mm:ss' <br/> async | date: 'hh-mm' </b></td>
+                <td>{{currentTime}}</td>
+                <td>{{currentTime | async | date: 'hh:mm:ss'}} <br/> {{currentTime | async | date: 'hh:mm'}}</td>
+            </tr>
+            <!--/async with date  pipe-->
+        </tbody>
+    </table>
+</div>
