@@ -1,5 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
 import { CityModel } from '../../models/city.model';
+import { single } from 'rxjs';
 
 @Component({
   selector: 'app-signal',
@@ -42,6 +43,10 @@ export class SignalComponent {
       //set value in signal
       this.roll.set(10);
     }, 5000);
+
+    setTimeout(() => {
+      this.empLastName.set('Das');
+    }, 3000);
   } //end of constructor
 
   //add new city
@@ -70,4 +75,48 @@ export class SignalComponent {
   changeCityName() {
     this.cityObj.set({ ...this.cityObj(), cityName: 'Delhi' });
   }
+
+  /**
+   * Employee Signal Use
+   *
+   */
+
+  //Signal as string
+  empFirstName = signal<string>('Bitan');
+  empLastName = signal<string>('Kumar');
+
+  //Signal as array
+  empCity = signal(['KOlKATA']);
+
+  //signal as computed value
+  empFullName = computed(() => this.empFirstName() + ' ' + this.empLastName());
+
+  //signal as object
+  empObj = signal({
+    isEmpOnline: false,
+    empId: 1
+  });
+
+  //function to add city
+  addCity(cityName: string) {
+    if (cityName != '' || cityName != null) {
+      //Set new value in signal array
+      this.empCity.set([...this.empCity(), cityName.toUpperCase()]);
+    }
+  }
+
+  //Function to change first name
+  changeEmpFirstName() {
+    this.empFirstName.set('Tapan');
+  }
+  //Function to change Last name
+  changeEmpLastName() {
+    this.empLastName.set('Kumar');
+  }
+
+  //function to toggle online and offline
+  toggleOnlineOffline(){
+    this.empObj.set({...this.empObj(), isEmpOnline: !this.empObj().isEmpOnline})
+  }
+
 }

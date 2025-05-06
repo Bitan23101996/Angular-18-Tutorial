@@ -34,4 +34,40 @@
 
         </div>
     </div>
+    <hr />
+    <!--Another Signal Example-->
+    <div class="row">
+        <div class="col-3">
+            Employee First Name: <b>{{empFirstName()}}</b> <!--Call normal way signal-->
+            Employee Last Name: <b>{{empLastName()}}</b>
+        </div>
+        <div class="col-3">
+            Emp City: <b>{{empCity()}}</b> <!--Array type signal-->
+            <input type="text" value="" #city placeholder="Enter city..." />
+            <button class="btn btn-sm btn-primary" (click)="addCity(city.value); city.value = '' ">Add City</button>
+        </div>
+        <div class="col-3"> <!--Computed type signal-->
+            Full Name of the Emp: <b>{{empFullName()}}</b>
+            <div>
+                <!--button to change first name-->
+                <button class="btn btn-sm btn-danger" (click)="changeEmpFirstName()">Change First Name</button>
+                <!--button to change last name-->
+                <button class="btn btn-sm btn-info" (click)="changeEmpLastName()">Change Last Name</button>
+            </div>
+        </div>
+        <div class="col-3">
+            Status:
+            @if(empObj().isEmpOnline){
+                <span class="badge rounded-pill bg-success">Online</span>
+            }
+            @else{
+                <span class="badge rounded-pill bg-danger">Offline</span>
+            }
+
+            <div>
+                <button class="btn btn-sm btn-warning" (click)="toggleOnlineOffline()">Toggle On/Off</button>
+            </div>
+        </div>
+    </div>
+    <!--/Another Signal Example-->
 </div>
