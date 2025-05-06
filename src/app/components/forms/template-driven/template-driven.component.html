@@ -1,0 +1,131 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h4>Angular 18 Template Friven Form Example</h4>
+</div>
+<div class="container mt-3">
+    <form #registrationForm="ngForm">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="firstName">First Name<span class="text-danger">*</span>:</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name"
+                            name="firstName" #firstName="ngModel" [(ngModel)]="registerObj.firstName" required
+                            maxlength="10" minlength="3" />
+                        @if((firstName.touched || firstName.dirty)){
+                        <div>
+                            @if(firstName.errors?.['required']){
+                            <label class="text-danger">This field is rquired</label>
+                            }@else if(firstName.errors?.['minlength']){
+                            <label class="text-danger">Must be 3 digits</label>
+                            }
+                        </div>
+                        }
+
+                    </div>
+                    <div class="col-6">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"
+                            name="lastName" [(ngModel)]="registerObj.lastName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="userName">User Name<span class="text-danger">*</span>:</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Enter User Name"
+                            name="userName" #userName="ngModel" [(ngModel)]="registerObj.userName" required
+                            minlength="5" maxlength="20" />
+                        @if((userName.touched || userName.dirty)){
+                        <div>
+                            @if(userName.errors?.['required']){
+                            <label class="text-danger">This field is rquired</label>
+                            }@else if(userName.errors?.['minlength']){
+                            <label class="text-danger">Must be 5 digits</label>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <div class="col-6">
+                        <label for="email">Email<span class="text-danger">*</span>:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email"
+                            [(ngModel)]="registerObj.email" #email="ngModel" required minlength="5" maxlength="20" />
+                        @if((email.touched || email.dirty)){
+                        <div>
+                            @if(email.errors?.['required']){
+                            <label class="text-danger">This field is rquired</label>
+                            }@else if(email.errors?.['minlength']){
+                            <label class="text-danger">Must be 5 digits</label>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <label for="password">Password<span class="text-danger">*</span>:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password"
+                            name="password" [(ngModel)]="registerObj.password" #password="ngModel" required
+                            minlength="8" maxlength="24"
+                            (ngModelChange)="checkPassAndConfirmPassSame(password.value, confirmPassword.value)" />
+                        @if((password.touched || password.dirty)){
+                        <div>
+                            @if(password.errors?.['required']){
+                            <label class="text-danger">This field is rquired</label>
+                            }@else if(password.errors?.['minlength']){
+                            <label class="text-danger">Must be 8 digits</label>
+                            }@else if(!isBothPasswordSame){
+                            <label class="text-danger">Password & Confirm Password is not matching</label>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <div class="col-6">
+                        <label for="confirmPassword">Confirm Password<span class="text-danger">*</span>:</label>
+                        <input type="password" class="form-control" id="confirmPassword"
+                            placeholder="Enter Confirm Password" name="confirmPassword"
+                            [(ngModel)]="registerObj.confirmPassword" #confirmPassword="ngModel" required minlength="8"
+                            maxlength="24"
+                            (ngModelChange)="checkPassAndConfirmPassSame(password.value, confirmPassword.value)" />
+                        @if((confirmPassword.touched || confirmPassword.dirty)){
+                        <div>
+                            @if(confirmPassword.errors?.['required']){
+                            <label class="text-danger">This field is rquired</label>
+                            }@else if(confirmPassword.errors?.['minlength']){
+                            <label class="text-danger">Must be 8 digits</label>
+                            }@else if(!isBothPasswordSame){
+                            <label class="text-danger">Password & Confirm Password is not matching</label>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="isTermChecked"
+                                #isTermChecked="ngModel" [(ngModel)]="registerObj.isTermChecked" required /> Terms &
+                            Condition
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" [disabled]="registrationForm.invalid"
+                    (click)="submitForm()">Submit</button>
+            </div>
+            <div class="col-4">
+                <p><b>Form Value:</b> {{registrationForm.value | json}}</p>
+                <p><b>Form Valid:</b>
+                    @if(registrationForm.valid){
+                    <label> Yes</label>
+                    }@else{
+                    <label> No</label>
+                    }
+                </p>
+            </div>
+        </div>
+    </form>
+
+
+
+
+</div>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <div class="container-fluid">
+    <a class="navbar-brand">Angular 18 Tutorial</a>
+    <!-- Links -->
+    <ul class="navbar-nav">
+      @if(menuList.length > 0){
+      @for(menu of menuList; track $index){
+      @if(menu.isDisplay === 'Y'){
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="menu.menuUrl">{{menu.menuTitle}}</a>
+      </li>
+      }
+      }
+      }
+
+
+    </ul>
+  </div>
+
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

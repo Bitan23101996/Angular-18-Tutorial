@@ -1,0 +1,29 @@
+<h1 class="page-header-text">Data Binding in Angular 18</h1>
+
+<div>One Way Data Binding</div>
+<input type="text" value="{{ firstName() }}" />
+<div>Two Way Data Binding</div>
+<input type="text" />
+
+<div>Use if Signal</div>
+Username: {{ firstName() }}
+
+<button type="button" (click)="changeFirstNameUsingSignal('Mr. Bitan')">
+  Change Name
+</button>
+
+<!-- Use of @if() - @else If() - @else() -->
+@if(isActive){
+<div>Hi, {{ firstName() }} you are active</div>
+}@else {
+<div>Hi, {{ firstName() }} you are de-active</div>
+}
+
+<!-- Use of @for() loop -->
+<ul>
+    @for (city of cityList; track $index) {
+    @if(city == 'Howrah'){
+    <li>{{ city }}</li>
+    }
+    }
+</ul>
