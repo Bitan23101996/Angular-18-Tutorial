@@ -5,8 +5,14 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <!-- <p>Full Name: {{fullName()}} </p> -->
+            <p>Full Name: {{fullName()}} </p>
             <!--call signal like this-->
+            <button class="btn btn-sm btn-primary" (click)="changeFirstName()" type="button">Change Name</button>
+        </div>
+        <div class="col-3">
+            <p>Full Name: {{getEmail()}} </p>
+            <!--call signal like this-->
+            <button class="btn btn-sm btn-success" (click)="changeEmail()" type="button">Change Email</button>
         </div>
     </div>
 </div>

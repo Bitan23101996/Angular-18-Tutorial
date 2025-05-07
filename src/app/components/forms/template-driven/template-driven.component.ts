@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-template-driven',
-  standalone: true,
-  imports: [FormsModule, JsonPipe],
-  templateUrl: './template-driven.component.html',
-  styleUrl: './template-driven.component.scss',
+    selector: 'app-template-driven',
+    imports: [FormsModule, JsonPipe],
+    templateUrl: './template-driven.component.html',
+    styleUrl: './template-driven.component.scss'
 })
 export class TemplateDrivenComponent {
   //pass & confirm pass same or not

@@ -5,11 +5,10 @@ import { StudentModel } from '../../models/student.model';
 import { TableHeadingModel } from '../../models/table-headding.model';
 
 @Component({
-  selector: 'app-angular-directive',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './angular-directive.component.html',
-  styleUrl: './angular-directive.component.scss',
+    selector: 'app-angular-directive',
+    imports: [FormsModule],
+    templateUrl: './angular-directive.component.html',
+    styleUrl: './angular-directive.component.scss'
 })
 export class AngularDirectiveComponent implements OnInit {
   //show/hide flag for div 1

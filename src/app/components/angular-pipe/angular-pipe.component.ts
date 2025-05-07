@@ -5,11 +5,10 @@ import { StudentModel } from '../../models/student.model';
 import { NaPipe } from '../../pipes/na.pipe';
 
 @Component({
-  selector: 'app-angular-pipe',
-  standalone: true,
-  imports: [UpperCasePipe, LowerCasePipe, DatePipe, JsonPipe, AsyncPipe, NaPipe],
-  templateUrl: './angular-pipe.component.html',
-  styleUrl: './angular-pipe.component.scss',
+    selector: 'app-angular-pipe',
+    imports: [UpperCasePipe, LowerCasePipe, DatePipe, JsonPipe, AsyncPipe, NaPipe],
+    templateUrl: './angular-pipe.component.html',
+    styleUrl: './angular-pipe.component.scss'
 })
 export class AngularPipeComponent implements OnInit {
   //use for upper case pipe

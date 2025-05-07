@@ -3,11 +3,10 @@ import { CityModel } from '../../models/city.model';
 import { single } from 'rxjs';
 
 @Component({
-  selector: 'app-signal',
-  standalone: true,
-  imports: [],
-  templateUrl: './signal.component.html',
-  styleUrl: './signal.component.scss',
+    selector: 'app-signal',
+    imports: [],
+    templateUrl: './signal.component.html',
+    styleUrl: './signal.component.scss'
 })
 export class SignalComponent {
   //use firstName & lastName as signal - signal initilize
