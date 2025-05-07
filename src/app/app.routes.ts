@@ -7,6 +7,7 @@ import { AngularPipeComponent } from './components/angular-pipe/angular-pipe.com
 import { TemplateDrivenComponent } from './components/forms/template-driven/template-driven.component';
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { SignalComponent } from './components/signal/signal.component';
+import { LinkedSignalComponent } from './components/linked-signal/linked-signal.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path: 'signal',
         component: SignalComponent
+    },
+    {
+        path: 'linked-signal',
+        component: LinkedSignalComponent
     }
 ];

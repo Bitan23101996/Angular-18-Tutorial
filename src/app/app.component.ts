@@ -71,6 +71,13 @@ export class AppComponent {
     isActive: true,
     isDisplay: 'Y',
     menuUrl: 'signal'
+  },
+  {
+    menuTitle: 'Linked Signal',
+    menuId: 9,
+    isActive: true,
+    isDisplay: 'Y',
+    menuUrl: 'linked-signal'
   }
 ];
 
