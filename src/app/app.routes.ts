@@ -8,6 +8,7 @@ import { TemplateDrivenComponent } from './components/forms/template-driven/temp
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { SignalComponent } from './components/signal/signal.component';
 import { LinkedSignalComponent } from './components/linked-signal/linked-signal.component';
+import { DynamicReactiveFormComponent } from './components/forms/dynamic-reactive-form/dynamic-reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {
         path: 'linked-signal',
         component: LinkedSignalComponent
+    },
+    {
+        path: 'dynamic-reactive-form',
+        component: DynamicReactiveFormComponent
     }
 ];

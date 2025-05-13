@@ -1,0 +1,52 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h4>Angular 19 Dynamic Form Example</h4>
+</div>
+
+<div class="container">
+    <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+
+        <div *ngFor="let field of dynamicFormFields" class="mb-3">
+          <label>{{ field.label }}</label><br />
+      
+          <!-- Text Input -->
+          <input
+            *ngIf="field.type === 'text'"
+            type="text"
+            class="form-control"
+            [formControlName]="field.key"
+          />
+      
+          <!-- Radio Buttons -->
+          <div *ngIf="field.type === 'radio'">
+            <div *ngFor="let option of field.options">
+              <label>
+                <input
+                  type="radio"
+                  [value]="option.value"
+                  [formControlName]="field.key"
+                />
+                {{ option.label }}
+              </label>
+            </div>
+          </div>
+      
+          <!-- Select Dropdown -->
+          <div *ngIf="field.type === 'select'">
+            <select class="form-select" [formControlName]="field.key">
+                
+              <option *ngFor="let option of field.options" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+      
+          <!-- Checkbox -->
+          <div *ngIf="field.type === 'checkbox'">
+           <input type="checkbox" [formControlName]="field.key" />
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+</div>

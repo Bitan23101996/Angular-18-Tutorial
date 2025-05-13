@@ -55,29 +55,36 @@ export class AppComponent {
     menuTitle: 'Template Driven Form',
     menuId: 6,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'template-driven'
   },
   {
     menuTitle: 'Reactive Form',
     menuId: 7,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'reactive'
   },
   {
     menuTitle: 'Signal',
     menuId: 8,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'signal'
   },
   {
     menuTitle: 'Linked Signal',
     menuId: 9,
     isActive: true,
-    isDisplay: 'Y',
+    isDisplay: 'N',
     menuUrl: 'linked-signal'
+  },
+  {
+    menuTitle: 'Dynamic Reactive Form',
+    menuId: 10,
+    isActive: true,
+    isDisplay: 'Y',
+    menuUrl: 'dynamic-reactive-form'
   }
 ];
 

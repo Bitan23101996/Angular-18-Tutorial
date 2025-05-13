@@ -1,0 +1,35 @@
+[
+  {
+    "key": "username",
+    "label": "Username",
+    "type": "text",
+    "value": ""
+  },
+  {
+    "key": "gender",
+    "label": "Gender",
+    "type": "radio",
+    "options": [
+      { "label": "Male", "value": "M" },
+      { "label": "Female", "value": "F" }
+    ],
+    "value": "M"
+  },
+  {
+    "key": "country",
+    "label": "Country",
+    "type": "select",
+    "options": [
+      { "label": "India", "value": "IN" },
+      { "label": "USA", "value": "US" },
+      { "label": "UK", "value": "UK" }
+    ],
+    "value": "IN"
+  },
+  {
+    "key": "subscribe",
+    "label": "Subscribe to Newsletter",
+    "type": "checkbox",
+    "value": true
+  }
+]
